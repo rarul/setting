@@ -1,0 +1,29 @@
+== Ctrl CapsLock
+/etc/default/keyboard
+XKBOPTIONS="ctrl:nocaps"
+
+== ETC 
+--Chrome
+--mp3 player
+apt install audicious
+--mozc
+apt install ibus-mozc
+reboot
+From "Text Entry", add new "Input sources" of "Japanese (Mozc) (IBus)
+
+== setting up
+sudo su
+passwd
+apt update
+apt upgrade
+apt install openssh-server
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+cd .ssh
+config
+identity
+id_rsa
+
+== development
+sudo apt-get install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex 
+

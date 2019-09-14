@@ -1,0 +1,48 @@
+define rarul0 {
+	   set line /dev/ttyUSB0
+	   set speed 115200
+}
+define rarul1 {
+	   set line /dev/ttyUSB1
+	   set speed 115200
+}
+define rarul2 {
+	   set line /dev/ttyUSB2
+	   set speed 115200
+}
+define rarul3 {
+	   set line /dev/ttyUSB3
+	   set speed 115200
+}
+define rarul4 {
+	   set line /dev/ttyUSB4
+	   set speed 115200
+}
+define rarul5 {
+	   set line /dev/ttyUSB5
+	   set speed 115200
+}
+define rarul6 {
+	   set line /dev/ttyUSB6
+	   set speed 115200
+}
+define rarul7 {
+	   set line /dev/ttyUSB7
+	   set speed 115200
+}
+
+
+#set flow-control none
+set protocol kermit
+set speed 115200
+#set speed 19200
+#set speed 57600
+set command bytesize 8
+set parity none
+set stop-bits 1
+set carrier-watch off
+#set terminal echo on
+set flow-control none
+#set terminal cd-display crlf
+
+rarul1
