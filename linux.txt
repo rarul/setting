@@ -1,0 +1,28 @@
+== Preparing repository
+mkdir -p ~/src/linux
+cd ~/src/linux
+git clone　https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+git remote add stable https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+git fetch stable
+git checkout -B linux-4.15.y stable/linux-4.15.y
+
+== Build
+mkdir -p ../build
+cp /boot/config-4.15.0-62-generic ../build/.config
+make O=../build olddefconfig
+time make -j4 O=../build LOCALVERSION=-stock
+time make modules -j4 O=../build LOCALVERSION=-stock
+
+== Install for my local PC
+make bindeb-pkg O=../build/ LOCALVERSION=-stock
+ls -l ../*.deb
+sudo apt ../*
+vi /etc/default/grub
+#GRUB_HIDDEN_TIMEOUT=0
+#GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=1
+#GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+== referrence
+https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel
+https://gihyo.jp/admin/serial/01/ubuntu-recipe/0526

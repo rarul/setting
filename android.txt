@@ -1,0 +1,19 @@
+== Setup
+apt install curl make zip unzip git python default-jre openjdk-8-jd bison g++-multilib gcc-multilib libxml2-utils 
+
+apt install qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
+adduser $USER kvm
+
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
+== Preparing repository
+mkdir -p ~/src/aosp
+cd ~/src/aosp
+repo init -u https://android.googlesource.com/platform/manifest -b android-8.1.0_r67
+repo sync -c --no-clone-bundle -j2 --force-sync
+
+
+== referrence
+https://source.android.com/setup/build/requirements
+https://qiita.com/natmark/items/09802c7f16733cd77f8e

@@ -9,4 +9,5 @@ PS1="\[\e]0;\u@\h: \w\a\][${debian_chroot:+($debian_chroot)}\u@\h \W]\$ "
 EDITOR=vi
 
 export EDITOR=vi
+umask 0022
 
