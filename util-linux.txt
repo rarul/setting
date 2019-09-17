@@ -1,0 +1,9 @@
+mkdir ~/src/util-linux
+cd ~/src/util-linux
+git clone https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git
+cd util-linux
+./autogen.sh
+mkdir ../build
+cd ../build
+../util-linux/configure
+make -j4

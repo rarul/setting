@@ -1,0 +1,9 @@
+mkdir -p ~/src/coreutils
+cd ~/src/coreutils
+git clone git://git.savannah.gnu.org/coreutils.git
+cd coreutils
+./bootstrap
+mkdir ../build
+cd ../build
+../coreutils/configure
+make -j4

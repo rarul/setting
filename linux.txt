@@ -26,3 +26,71 @@ GRUB_TIMEOUT=1
 == referrence
 https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel
 https://gihyo.jp/admin/serial/01/ubuntu-recipe/0526
+
+== perf
+cd ~/src/linux/linux/tools
+make perf
+mkdir -p ~/tools
+cp perf/perf ~/tools
+
+== other tools
+acpi
+-acpidbg --- interactive access to acpi ?
+-acpidump --- dump acpi information
+-ec --- read/set acpi information ?
+cgroup
+-cgroup_event_liastener --- ?
+cpupower
+-apt install libpci-dev
+-cpupower --- Intel CPU specific power state deep report
+-cpufreq-bench --- ?
+firewire
+-(not sure)
+freefall
+-freefall --- freefall sensor setting for Dell laptop ?
+gpio
+-lsgpio
+-gpio-hammer
+-gpio-event-mon
+hv
+-hv_kvp_daemon
+-hv_vss_daemon
+-hv_fcopy_daemon
+iio
+-iio_event_monitor
+-lsiio
+-iio_generic_buffer
+kvm_stat
+-apt install asciidoc
+-kvm_stat
+leds
+-uledmon
+-led_hw_brightness_mon
+liblockdep
+bpf
+-apt install binutils-dev libreadline-dev
+-bpftool
+perf
+-perf
+selftests
+-apt-get install gcc-multilib libc6-i386 libc6-dev-i386
+spi
+-spidev_test
+-spidev_fdx
+objtool
+-objtool --- Documentation/stack-validation.txt
+tmon
+-tmon --- monitoring temperature on system ?
+turbostat
+-turbostat --- report Intel CPU's power state ?
+usb
+-testusb
+-ffs-test
+virtio
+vm
+-page_owner_sort
+wmi
+-del-smbios-example
+x86_energy_perf_policy
+-x86_energy_perf_policy
+

@@ -1,0 +1,8 @@
+mkdir ~/src/e2fsprogs
+cd ~/src/e2fsprogs
+git clone git clone git://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
+mkdir build
+cd build
+../e2fsprogs/configure
+make -j4
+

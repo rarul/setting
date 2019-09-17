@@ -1,0 +1,9 @@
+mkdir ~/src/procps-ng
+cd ~/src/procps-ng
+git clone https://gitlab.com/procps-ng/procps
+cd procps
+./autogen.sh
+mkdir ../build
+cd ../build
+../configure
+make -j4

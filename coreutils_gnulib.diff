@@ -1,0 +1,15 @@
+diff --git a/lib/acl-internal.c b/lib/acl-internal.c
+index cc42183..b2f48d5 100644
+--- a/lib/acl-internal.c
++++ b/lib/acl-internal.c
+@@ -23,6 +23,10 @@
+ 
+ #include "acl-internal.h"
+ 
++#if (__GNUC__ == 4 && 6 <= __GNUC_MINOR__) || 4 < __GNUC__
++# pragma GCC diagnostic ignored "-Wsuggest-attribute=const"
++#endif
++
+ #if USE_ACL && HAVE_ACL_GET_FILE /* Linux, FreeBSD, Mac OS X, IRIX, Tru64, Cygwin >= 2.5 */
+ 
+ # if HAVE_ACL_TYPE_EXTENDED /* Mac OS X */
