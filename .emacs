@@ -63,12 +63,19 @@
 
 ; indent words, coding style
 (add-hook 'c-mode-common-hook
-        (lambda ()
+          (lambda ()
 ;                (c-set-style "bsd")
-                (setq c-basic-offset 4)))
-(custom-set-variables
- '(tab-width 4))
+            (setq c-basic-offset 4)
+            (c-set-offset 'case-label '+)))
 ;stop to use tab. always space.
-(setq-default indent-tabs-mode nil)
+;(setq-default indent-tabs-mode nil)
+;Pressing TAB should cause indentation
+(setq-default c-tab-always-indent t)
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(tab-width 4))

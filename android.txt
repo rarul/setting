@@ -1,8 +1,5 @@
 == Setup
-apt install curl make zip unzip git python default-jre openjdk-8-jd bison g++-multilib gcc-multilib libxml2-utils 
-
-apt install qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
-adduser $USER kvm
+apt install curl make zip unzip git python default-jre openjdk-8-jdk bison g++-multilib gcc-multilib libxml2-utils 
 
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
@@ -13,6 +10,14 @@ cd ~/src/aosp
 repo init -u https://android.googlesource.com/platform/manifest -b android-8.1.0_r67
 repo sync -c --no-clone-bundle -j2 --force-sync
 
+== Building
+source build/envsetup.sh
+lunch aosp_x86_64-eng
+make -j4 2>&1 | tee make.log
+
+== Emulator
+apt install qemu-kvm libvirt0 libvirt-bin virt-manager bridge-utils
+adduser $USER kvm
 
 == referrence
 https://source.android.com/setup/build/requirements
