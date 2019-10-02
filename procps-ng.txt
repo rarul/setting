@@ -5,5 +5,9 @@ cd procps
 ./autogen.sh
 mkdir ../build
 cd ../build
-../configure
+../procps/configure
 make -j4
+
+
+## http://www.linuxfromscratch.org/lfs/view/9.0/chapter06/procps-ng.html
+## ./configure --prefix=/usr --exec-prefix= --libdir=/usr/lib --docdir=/usr/share/doc-procps-ng --disable-static --disable-kill

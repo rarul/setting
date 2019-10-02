@@ -7,3 +7,7 @@ mkdir ../build
 cd ../build
 ../util-linux/configure
 make -j4
+
+
+## http://www.linuxfromscratch.org/lfs/view/9.0/chapter06/util-linux.html
+## ./configure ADJTIME_PATH=/usr/lib/hwclock/adjtime --docdir=/usr/share/doc/util-linux --disable-chfn-chsh --disable-login --disable-nologin --disable-su --disable-setpriv --disable-runuser --disable-pylibmount --disable-static --without-python --without-systemd --without-systemdsystemunitdir

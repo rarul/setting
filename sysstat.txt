@@ -1,0 +1,10 @@
+mkdir ~/src/sysstat
+cd ~/src/sysstat
+git clone https://github.com/sysstat/sysstat
+cd sysstat
+./configure
+make -j4
+
+
+## http://www.linuxfromscratch.org/blfs/view/9.0/general/sysstat.html
+## sa_lib_dir=/usr/lib/sa sa_dir=/var/log/sa conf_dir=/etc/sysconfig ./configure --prefix=/usr --disable-file-attr
