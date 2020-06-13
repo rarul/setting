@@ -1,0 +1,59 @@
+== Ctrl CapsLock
+vi /etc/default/keyboard
+XKBOPTIONS="ctrl:nocaps"
+
+== ETC 
+--Chrome
+--mp3 player
+apt install audicious
+vi /etc/pulse/default.pa
+#load-module module-switch-on-port-available
+#comment out to avoid audio's switching(sound off) from recovering blank(powersave mode).
+
+--mozc
+apt install mozc-utils-gui
+reboot
+From "Region & Language" in Settings, add new "Input sources" of "Japanese (Mozc)
+
+== setting up
+sudo su
+passwd
+apt update
+apt upgrade
+apt install openssh-server
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+cd .ssh
+config
+identity
+id_rsa
+
+apt install pigz pixz
+mkdir ~/bin
+cd ~/bin
+ln -s /usr/bin/pigz gzip
+ln -s /usr/bin/pixz xz
+
+vi /etc/fstab
+tmpfs   /tmp    tmpfs   rw,nodev,nosuid
+UUID=B09449BA94498436	/home/rarul/data	ntfs	ro	0	0
+
+apt install ccache
+ccache -M 100G
+cd ~/bin
+ln -s /usr/bin/ccache gcc
+ln -s /usr/bin/ccache g++
+ln -s /usr/bin/ccache cc
+ln -s /usr/bin/ccache c++
+
+== make linux fast again
+https://make-linux-fast-again.com
+vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noibrs noibpb nopti nospectre_v2 nospectre_v1 l1tf=off nospec_store_bypass_disable no_stf_barrier mds=off mitigations=off"
+grub-install
+
+== development
+sudo apt install emacs
+sudo apt-get install git build-essential
+sudo apt install kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev
+sudo apt install autopoint gperf texinfo libtool libtool-bin
