@@ -3,3 +3,5 @@
 	name = rarul
 [push]
 	default = simple
+[core]
+	excludesFile = /home/rarul/.gitignore
