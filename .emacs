@@ -26,7 +26,7 @@
 (setq scroll-step 0)
 
 ;(defvar gud-gud-gdb-history (list "aarch64-linux-gdb  --fullname"))
-(defvar gud-gud-gdb-history (list "arm-linux-gnueabihf-gdb  --fullname"))
+;(defvar gud-gud-gdb-history (list "arm-linux-gnueabihf-gdb  --fullname"))
 ;(require 'git)
 
 (autoload 'perl-debug "perl-debug" nil t)

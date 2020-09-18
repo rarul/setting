@@ -9,6 +9,8 @@ set print demangle on
 set print asm-demangle on
 set demangle-style gnu-v3
 
+set pagination off
+
 define syms
 set sysroot $arg0
 set solib-absolute-prefix $arg0
