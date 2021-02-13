@@ -15,6 +15,10 @@ apt install mozc-utils-gui
 reboot
 From "Region & Language" in Settings, add new "Input sources" of "Japanese (Mozc)
 
+== ntp rtc local time
+timedatectl set-local-rtc true
+timedatectl status
+
 == setting up
 sudo su
 passwd
