@@ -1,0 +1,76 @@
+== Ctrl CapsLock
+vi /etc/default/keyboard
+XKBOPTIONS="ctrl:nocaps"
+
+== ETC 
+--Chrome
+--mp3 player
+apt install audacious
+vi /etc/pulse/default.pa
+#load-module module-switch-on-port-available
+#comment out to avoid audio's switching(sound off) from recovering blank(powersave mode).
+
+--mozc
+apt install ibus-mozc mozc-utils-gui
+reboot
+From "Region & Language" in Settings, add new "Input sources" of "Japanese (Mozc)
+
+--keyboard repeat
+Setting -> Accessibility -> Repeat Keys
+Change defay as a half
+
+== ntp rtc local time
+timedatectl set-local-rtc true
+timedatectl status
+
+== setting up
+sudo su
+passwd
+apt update
+apt upgrade
+apt install openssh-server
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+cd .ssh
+config
+identity
+id_rsa
+
+apt install pigz pixz
+mkdir ~/bin
+cd ~/bin
+ln -s /usr/bin/pigz gzip
+ln -s /usr/bin/pixz xz
+
+vi /etc/fstab
+tmpfs   /tmp    tmpfs   rw,nodev,nosuid
+UUID=B09449BA94498436	/home/rarul/data	ntfs	ro	0	0
+
+apt install ccache
+ccache -M 100G
+cd ~/bin
+ln -s /usr/bin/ccache gcc
+ln -s /usr/bin/ccache g++
+ln -s /usr/bin/ccache cc
+ln -s /usr/bin/ccache c++
+
+== make linux fast again
+https://make-linux-fast-again.com
+vi /etc/default/grub
+GRUB_TIMEOUT=1
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noibrs noibpb nopti nospectre_v2 nospectre_v1 l1tf=off nospec_store_bypass_disable no_stf_barrier mds=off mitigations=off"
+update-grub2
+
+== development
+sudo apt install emacs
+sudo apt install git build-essential
+# for Linux build
+sudo apt install flex bison libelf-dev libssl-dev
+# for util-linux biuld
+sudo apt install autopoint autoconf libtool pkg-config gettext
+# for coreutils build
+sudo apt install gperf 
+# for what build ? (copying from the old memo text file...)
+# sudo apt install fakeroot libncurses5-dev gperf texinfo libtool-bin
+
+

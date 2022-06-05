@@ -12,6 +12,10 @@ cp /boot/config-4.15.0-62-generic ../build/.config
 make O=../build olddefconfig
 time make -j4 O=../build LOCALVERSION=-stock
 time make modules -j4 O=../build LOCALVERSION=-stock
+### maybe face build error like "debian/canonical-revoked-certs.pem"
+### then delete description in .config
+CONFIG_SYSTEM_TRUSTED_KEYS=""
+CONFIG_SYSTEM_REVOCATION_KEYS=""
 
 == Install for my local PC
 make bindeb-pkg O=../build/ LOCALVERSION=-stock
