@@ -4,6 +4,8 @@ XKBOPTIONS="ctrl:nocaps"
 
 == ETC 
 --Chrome
+chrome://flags/
+ Smooth Scrolling Disabled
 --mp3 player
 apt install audacious
 vi /etc/pulse/default.pa
